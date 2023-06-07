@@ -27,20 +27,20 @@
               <h1>
                 Nick Crispino
               </h1>
-              <p>I am an undergraduate student at <a href="https://www.ri.cmu.edu/">Washington University in St. Louis</a>, where I am part of the <a href="https://www.scs.cmu.edu/">McKelvey School of Engineering</a> and work on natural language processing. I am in the <a href="https://nlp.wustl.edu/">WashU NLP Group</a> in <a href="https://cgraywang.github.io/">Chenguang Wang</a>'s lab.
+              <p>I am an undergraduate student at <a href="https://wustl.edu/">Washington University in St. Louis</a>, where I am part of the <a href="https://engineering.wustl.edu/">McKelvey School of Engineering</a> and work on natural language processing. I am in the <a href="https://nlp.wustl.edu/">WashU NLP Group</a> in <a href="https://cgraywang.github.io/">Chenguang Wang</a>'s lab.
               </p>              
               <p>
                 I have been a teaching assistant for CSE131, our introduction to computer science course, for 5 semesters, as well as CSE347, our algorithms course, for 1 semester.
               </p>
               <p style="text-align:center">
                 <!-- <a target="_blank" href="https://mailhide.io/e/B8TyS"> Email</a> &nbsp;/&nbsp; -->
-                <a href="https://github.com/ncrispino">GitHub</a> &nbsp;/&nbsp;
+                <a href="https://github.com/ncrispino">GitHub</a>  <!-- &nbsp;/&nbsp; -->
                 <!-- <a href="https://scholar.google.com/citations?user=GCYG4GoAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
                 <a href="https://www.linkedin.com/in/lkeselman"> LinkedIn </a> -->
               </p>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:100%;max-width:100%" alt="profile photo" src="images/circle_bw_crop.jpg">
+              <img style="width:100%;max-width:100%" alt="profile photo" src="images/pic-of-me-cropped.jpg">
             </td>
           </tr>
         </table>
@@ -50,7 +50,7 @@
             <td style="padding:2.5%;width:100%;vertical-align:middle">
               <h2>Research</h2>
               <p>
-                I'm interested in improving the performance of large language models as well as safely expanding the use of AI in other fields.
+                I'm interested in improving the performance of large language models, exploring open-source models and methods, and applying these models to other domains (e.g., crypto).
               </p>
             </td>
           </tr>
@@ -94,74 +94,7 @@
           {% endif %}
           {% endfor %}
           {% endfor %}
-        </table>
-        <br>
-        <br>
-        <br>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Intel Projects</h2>
-              <p>Besides my work on the RealSense depth sensors and the publications above, a sampling of my publicly disclosed work
-              </p>
-            </td>
-          </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'Intel' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.categories}} {{post.course}}</em>
-              <br>
-              {{ post.date | date: "%Y-%m-%d" }}
-
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
+        </table>        
         <br>
         <br>
         <br>
@@ -178,7 +111,7 @@
 
           {% for post in site.posts %}
           {% for cat in post.categories %}
-          {% if cat != 'research' and cat != 'Intel' %}
+          {% if cat != 'research' %}
           <tr>
             <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
               <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />

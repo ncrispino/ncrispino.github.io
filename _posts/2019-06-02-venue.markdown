@@ -6,9 +6,9 @@ date:   2019-06-04 22:21:59 +00:00
 categories: research
 author: "Nick Crispino"
 authors: "<strong>Nick Crispino</strong>"
-venue: "ACM/IEEE Joint Conference on Digital Libraries"
+# venue: "ACM/IEEE Joint Conference on Digital Libraries"
 # arxiv: https://arxiv.org/abs/1904.12573
 # slides: /pdfs/jcdl2019.pdf
 # code: https://github.com/leonidk/venue_scores
 ---
-Example
+Coming soon!
