@@ -2,7 +2,7 @@
 layout: post
 title:  "Agent Instructs Large Language Models to be General Zero-Shot Reasoners"
 date:   2023-10-29 12:00:00 -0400
-image: /tn/agentinstruct-fig1.png
+image: agentinstruct-fig1.png
 categories: research
 author: "Nicholas Crispino"
 authors: "Nicholas Crispino, Kyle Montgomery, Fankun Zeng, Dawn Song, Chenguang Wang"
