@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Agent Instructs Large Language Models to be General Zero-Shot Reasoners"
-date:   2023-10-29 12:00:00 -0400
+date:   2024-08-14 12:00:00 -0400
 image: /agentinstruct-fig1.png
 categories: research
 author: "Nicholas Crispino"
 authors: "Nicholas Crispino, Kyle Montgomery, Fankun Zeng, Dawn Song, Chenguang Wang"
-venue: "arXiv preprint"
+venue: "Forty-first International Conference on Machine Learning"
 arxiv: https://arxiv.org/abs/2310.03710
 code: https://github.com/wang-research-lab/agentinstruct
 ---
