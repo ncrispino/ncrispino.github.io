@@ -3,6 +3,110 @@
 
 //
 // IMPORTS
+/* Dark mode variables and transitions */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-link: #1772d0;
+  --color-link-hover: #f09228;
+  --toggle-bg: rgba(0, 0, 0, 0.1);
+  --toggle-hover-bg: rgba(0, 0, 0, 0.2);
+}
+
+/* Add white background behind images in dark mode, except profile picture */
+body.theme-dark img:not(.profile-pic) {
+  background-color: #ffffff;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+/* Highlight my name in author lists */
+/* Subtle highlight for my name in author lists */
+.author-highlight {
+  background-color: #f0f0f0;
+  color: var(--color-text);
+  padding: 0.05rem 0.15rem;
+  border-radius: 0.125rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1e1e1e;
+    --color-text: #e0e0e0;
+    --color-link: #80cbc4;
+    --color-link-hover: #ffab91;
+    --toggle-bg: rgba(255, 255, 255, 0.1);
+    --toggle-hover-bg: rgba(255, 255, 255, 0.2);
+  }
+}
+
+body.theme-dark {
+  --color-bg: #1e1e1e;
+  --color-text: #e0e0e0;
+  --color-link: #80cbc4;
+  --color-link-hover: #ffab91;
+  --toggle-bg: rgba(255, 255, 255, 0.1);
+  --toggle-hover-bg: rgba(255, 255, 255, 0.2);
+}
+/* Dark-mode override for author highlight readability */
+body.theme-dark .author-highlight {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Container for centering and positioning the theme toggle */
+.site-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--toggle-bg);
+  border: 1px solid var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 1.5rem;
+  color: var(--color-text);
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background-color: var(--toggle-hover-bg);
+}
+
+/* Icon visibility toggles */
+#theme-toggle .icon {
+  display: none;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+#theme-toggle .icon-moon {
+  display: inline-block;
+}
+body.theme-dark #theme-toggle .icon-moon {
+  display: none;
+}
+body.theme-dark #theme-toggle .icon-sun {
+  display: inline-block;
+}
 //
 
 //@import "reset";
@@ -13,13 +117,14 @@
 /* BASE RULES */
 /**************/
 a {
-  color: #1772d0;
+  color: var(--color-link);
+  transition: color 0.3s ease;
   text-decoration: none;
 }
 
-a:focus,
-a:hover {
-  color: #f09228;
+ a:focus,
+ a:hover {
+  color: var(--color-link-hover);
   text-decoration: none;
 }
 
