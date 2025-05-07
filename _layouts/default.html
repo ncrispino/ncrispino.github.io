@@ -12,6 +12,8 @@
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <!-- Favicon placeholder (updated via theme script) -->
+  <link id="favicon" rel="icon" href="{{ site.baseurl }}/favicon-light.ico">
 
 </head>
 
@@ -197,17 +199,41 @@
     (function(){
       const key = 'site-theme';
       const btn = document.getElementById('theme-toggle');
-      const apply = theme => {
-        document.body.classList.toggle('theme-dark', theme==='dark');
-        btn.setAttribute('aria-label', theme==='dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      const favicon = document.getElementById('favicon');
+      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+      const applyTheme = theme => {
+        document.body.classList.toggle('theme-dark', theme === 'dark');
+        document.body.classList.toggle('theme-light', theme === 'light');
+        btn.setAttribute(
+          'aria-label',
+          theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+        );
+        if (favicon) {
+          favicon.setAttribute(
+            'href',
+            theme === 'dark'
+              ? '{{ site.baseurl }}/favicon-dark.ico'
+              : '{{ site.baseurl }}/favicon-light.ico'
+          );
+        }
       };
-      let theme = localStorage.getItem(key)
-        || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      apply(theme);
-      btn.addEventListener('click', ()=>{
-        theme = (theme==='dark' ? 'light' : 'dark');
+
+      let theme = localStorage.getItem(key) || (prefersDarkScheme.matches ? 'dark' : 'light');
+      applyTheme(theme);
+
+      // Listen for OS scheme changes unless user has explicitly set theme
+      prefersDarkScheme.addEventListener('change', e => {
+        if (!localStorage.getItem(key)) {
+          applyTheme(e.matches ? 'dark' : 'light');
+        }
+      });
+
+      // Toggle on button click
+      btn.addEventListener('click', () => {
+        theme = theme === 'dark' ? 'light' : 'dark';
         localStorage.setItem(key, theme);
-        apply(theme);
+        applyTheme(theme);
       });
     })();
   </script>

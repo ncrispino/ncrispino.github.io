@@ -16,8 +16,14 @@
 /* Add white background behind images in dark mode, except profile picture */
 body.theme-dark img:not(.profile-pic) {
   background-color: #ffffff;
-  padding: 0.25rem;
+}
+
+/* Always put a border around images except profile picture */
+img:not(.profile-pic) {
+  border: 1px solid #ffffff;
   border-radius: 0.25rem;
+  padding: 0.25rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Highlight my name in author lists */
@@ -51,6 +57,15 @@ body.theme-dark {
 /* Dark-mode override for author highlight readability */
 body.theme-dark .author-highlight {
   background-color: rgba(255, 255, 255, 0.15);
+}
+/* Light-mode override to allow forced light even if OS is dark */
+body.theme-light {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-link: #1772d0;
+  --color-link-hover: #f09228;
+  --toggle-bg: rgba(0, 0, 0, 0.1);
+  --toggle-hover-bg: rgba(0, 0, 0, 0.2);
 }
 
 /* Container for centering and positioning the theme toggle */
