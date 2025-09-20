@@ -73,11 +73,14 @@
             <a href="https://twitter.com/NRCrispino" style="font-size:14px;margin-right:18px;">
               <span style="margin-right:4px;">🐦</span>Twitter
             </a>
+            <a href="https://scholar.google.com/citations?user=oSD_dcgAAAAJ&hl=en&oi=ao" style="font-size:14px;margin-right:18px;">
+              <span style="margin-right:4px;">📚</span>Scholar
+            </a>
             <span style="color:rgba(128,128,128,0.4);margin-right:18px;">•</span>
-            <a href="#research" style="font-size:14px;margin-right:18px;text-decoration:none;color:var(--color-text);opacity:0.7;">
+            <a href="#research" style="font-size:14px;margin-right:18px;text-decoration:underline;text-decoration-color:rgba(128,128,128,0.3);text-underline-offset:3px;color:var(--color-text);opacity:0.8;transition:all 0.2s;">
               Research
             </a>
-            <a href="#opensource" style="font-size:14px;text-decoration:none;color:var(--color-text);opacity:0.7;">
+            <a href="#opensource" style="font-size:14px;text-decoration:underline;text-decoration-color:rgba(128,128,128,0.3);text-underline-offset:3px;color:var(--color-text);opacity:0.8;transition:all 0.2s;">
               Open Source
             </a>
             <!-- <a target="_blank" href="https://mailhide.io/e/B8TyS" style="font-size:15px;margin-right:20px;">
@@ -120,7 +123,11 @@
             <td style="padding:2.5%;width:75%;vertical-align:middle">
               <h3>{{post.title}}</h3>
               <br>
-              {{ post.authors | replace: "Nicholas Crispino", "<span class='author-highlight'>Nicholas Crispino</span>" }}
+              {% if post.authors contains "Nicholas Crispino*" %}
+                {{ post.authors | replace: "Nicholas Crispino*", "<span class='author-highlight'>Nicholas Crispino*</span>" }}
+              {% else %}
+                {{ post.authors | replace: "Nicholas Crispino", "<span class='author-highlight'>Nicholas Crispino</span>" }}
+              {% endif %}
 
               <br>
               <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
