@@ -37,38 +37,64 @@
         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
       </svg>
     </button>
+    <div style="width:100%;max-width:900px;margin:0 auto;padding:50px 20px 30px 20px;">
+      <div style="display:flex;align-items:center;gap:40px;justify-content:center;">
+        <div style="flex:0 0 auto;">
+          <img class="profile-pic" style="width:160px;height:auto;border-radius:10px;box-shadow:0 0 25px rgba(0,0,0,0.08), 0 0 50px rgba(0,0,0,0.04)" alt="profile photo" src="images/pic-of-me-square.jpeg">
+        </div>
+        <div style="flex:1;max-width:500px;">
+          <h1 style="font-size:38px;margin:0 0 8px 0;font-weight:500;line-height:1.2;text-align:left;">
+            Nick Crispino
+          </h1>
+          <p style="font-size:17px;color:var(--color-text);opacity:0.7;margin:0 0 20px 0;font-weight:300;">
+            PhD Student in Natural Language Processing
+          </p>
+
+          <div style="margin-bottom:20px;">
+            <div style="display:flex;align-items:center;margin-bottom:10px;">
+              <span style="display:inline-block;width:20px;margin-right:8px;">🎓</span>
+              <span style="font-size:14px;"><a href="https://www.ucsc.edu/">UC Santa Cruz</a> · <a href="https://engineering.ucsc.edu/">Baskin School of Engineering</a></span>
+            </div>
+            <div style="display:flex;align-items:center;margin-bottom:10px;">
+              <span style="display:inline-block;width:20px;margin-right:8px;">📚</span>
+              <span style="font-size:14px;">Second-year PhD Student</span>
+            </div>
+            <div style="display:flex;align-items:center;margin-bottom:10px;">
+              <span style="display:inline-block;width:20px;margin-right:8px;">👨‍🏫</span>
+              <span style="font-size:14px;">Advisor: <a href="https://cgraywang.github.io/">Professor Chenguang Wang</a></span>
+            </div>
+          </div>
+
+          <div style="padding-top:8px;border-top:1px solid rgba(128,128,128,0.2);">
+            <a href="https://github.com/ncrispino" style="font-size:14px;margin-right:18px;">
+              <span style="margin-right:4px;">💻</span>GitHub
+            </a>
+            <a href="https://twitter.com/NRCrispino" style="font-size:14px;">
+              <span style="margin-right:4px;">🐦</span>Twitter
+            </a>
+            <!-- <a target="_blank" href="https://mailhide.io/e/B8TyS" style="font-size:15px;margin-right:20px;">
+              <span style="margin-right:5px;">✉️</span>Email
+            </a> -->
+            <!-- <a href="https://scholar.google.com/citations?user=GCYG4GoAAAAJ" style="font-size:15px;margin-right:20px;">
+              <span style="margin-right:5px;">📚</span>Scholar
+            </a> -->
+            <!-- <a href="https://www.linkedin.com/in/lkeselman" style="font-size:15px;">
+              <span style="margin-right:5px;">💼</span>LinkedIn
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin:0;padding:0;">
     <tr style="padding:0px">
       <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:60%;vertical-align:middle">
-              <h1>
-                Nick Crispino
-              </h1>
-              <p>I am a second-year PhD student at <a href="https://www.ucsc.edu/">UC Santa Cruz</a>, where I am part of the <a href="https://engineering.ucsc.edu/">Baskin School of Engineering</a> and work on natural language processing. I am advised by Professor <a href="https://cgraywang.github.io/">Chenguang Wang</a>.
-              </p>              
-              <p style="text-align:center">
-                <!-- <a target="_blank" href="https://mailhide.io/e/B8TyS"> Email</a> &nbsp;/&nbsp; -->
-                <a href="https://github.com/ncrispino">GitHub</a>  &nbsp;/&nbsp;
-                <a href="https://twitter.com/NRCrispino">Twitter</a> 
-                 <!-- &nbsp;/&nbsp; -->
-                <!-- <a href="https://scholar.google.com/citations?user=GCYG4GoAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
-                <a href="https://www.linkedin.com/in/lkeselman"> LinkedIn </a> -->
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <img class="profile-pic" style="width:70%;max-width:150px;display:block;margin:0 auto;border-radius:8px;box-shadow:0 0 25px rgba(0,0,0,0.08), 0 0 50px rgba(0,0,0,0.04)" alt="profile photo" src="images/pic-of-me-square.jpeg">
-            </td>
-          </tr>
-        </table>
-
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
               <h2>Research</h2>
               <p>
-                I'm interested in scaling multi-agent approaches to improve downstream task performance and expand the real-world use cases of agentic workflows, as well as exploring critical areas of LLM safety through interpretability.
+                I'm interested in scaling multi-agent approaches to improve downstream task performance and expanding the real-world use cases of agentic workflows, as well as exploring critical areas of LLM safety through interpretability.
               </p>
             </td>
           </tr>
@@ -91,19 +117,27 @@
               <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
               <br>
               {% if post.arxiv %}
-              <a href="{{post.arxiv}}">arxiv</a> /
+              <a href="{{post.arxiv}}">arxiv</a>
               {% endif %}
               {% if post.video %}
-              <a href="{{post.video}}">video</a> /
+              {% if post.arxiv %} / {% endif %}
+              <a href="{{post.video}}">video</a>
               {% endif %}
               {% if post.code %}
-              <a href="{{post.code}}">code</a> /
+              {% if post.arxiv or post.video %} / {% endif %}
+              <a href="{{post.code}}">code</a>
+              {% endif %}
+              {% if post.dataset %}
+              {% if post.arxiv or post.video or post.code %} / {% endif %}
+              <a href="{{post.dataset}}">dataset</a>
               {% endif %}
               {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
+              {% if post.arxiv or post.video or post.code or post.dataset %} / {% endif %}
+              <a href="{{post.poster}}">poster</a>
               {% endif %}
               {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
+              {% if post.arxiv or post.video or post.code or post.dataset or post.poster %} / {% endif %}
+              <a href="{{post.slides}}">slides</a>
               {% endif %}
               <p></p>
               {{ post.excerpt }}
@@ -186,7 +220,7 @@
             <td style="padding:0px">
               <br>
               <p style="text-align:center;font-size:small;">
-                Design and source code from <a style="font-size:small;" href="https://jonbarron.info">Jon Barron's website</a>. Template taken from <a style="font-size:small;" href="https://leonidk.com/">Leonid Keselman</a>.
+                Design and source code from <a style="font-size:small;" href="https://jonbarron.info">Jon Barron's website</a>. Template from <a style="font-size:small;" href="https://leonidk.com/">Leonid Keselman</a>. Modifications from me and Claude Code ✨.
               </p>
             </td>
           </tr>
