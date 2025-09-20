@@ -21,7 +21,8 @@
 
 <body>
   <div class="site-wrapper">
-    <button id="theme-toggle" aria-label="Toggle dark mode">
+    <!-- Theme toggle positioned to align with content -->
+    <button id="theme-toggle" aria-label="Toggle dark mode" style="position:absolute;top:50px;right:calc(50% - 450px + 40px + 40px);z-index:10;">
       <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
         <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
       </svg>
@@ -37,8 +38,8 @@
         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
       </svg>
     </button>
-    <div style="width:100%;max-width:900px;margin:0 auto;padding:50px 20px 30px 20px;">
-      <div style="display:flex;align-items:center;gap:40px;justify-content:center;">
+    <div style="width:100%;max-width:900px;margin:0 auto;padding:50px 20px 30px 20px;position:relative;">
+      <div style="display:flex;align-items:flex-start;gap:40px;justify-content:center;">
         <div style="flex:0 0 auto;">
           <img class="profile-pic" style="width:160px;height:auto;border-radius:10px;box-shadow:0 0 25px rgba(0,0,0,0.08), 0 0 50px rgba(0,0,0,0.04)" alt="profile photo" src="images/pic-of-me-square.jpeg">
         </div>
@@ -69,8 +70,15 @@
             <a href="https://github.com/ncrispino" style="font-size:14px;margin-right:18px;">
               <span style="margin-right:4px;">💻</span>GitHub
             </a>
-            <a href="https://twitter.com/NRCrispino" style="font-size:14px;">
+            <a href="https://twitter.com/NRCrispino" style="font-size:14px;margin-right:18px;">
               <span style="margin-right:4px;">🐦</span>Twitter
+            </a>
+            <span style="color:rgba(128,128,128,0.4);margin-right:18px;">•</span>
+            <a href="#research" style="font-size:14px;margin-right:18px;text-decoration:none;color:var(--color-text);opacity:0.7;">
+              Research
+            </a>
+            <a href="#opensource" style="font-size:14px;text-decoration:none;color:var(--color-text);opacity:0.7;">
+              Open Source
             </a>
             <!-- <a target="_blank" href="https://mailhide.io/e/B8TyS" style="font-size:15px;margin-right:20px;">
               <span style="margin-right:5px;">✉️</span>Email
@@ -86,13 +94,14 @@
       </div>
     </div>
 
+
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin:0;padding:0;">
     <tr style="padding:0px">
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Research</h2>
+              <h2 id="research">Research</h2>
               <p>
                 I'm interested in scaling multi-agent approaches to improve downstream task performance and expanding the real-world use cases of agentic workflows, as well as exploring critical areas of LLM safety through interpretability.
               </p>
@@ -153,9 +162,9 @@
         <!-- Open Source Projects Section -->
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Open Source Projects</h2>
-              <p>
+            <td style="padding:2.5% 2.5% 1% 2.5%;width:100%;vertical-align:middle">
+              <h2 id="opensource">Open Source Projects</h2>
+              <p style="margin-bottom:0;">
                 Contributing to open source projects that advance LLM capabilities and allow research ideas to be shared with the broader community.
               </p>
             </td>
