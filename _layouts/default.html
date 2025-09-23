@@ -125,6 +125,8 @@
               <br>
               {% if post.authors contains "Nicholas Crispino*" %}
                 {{ post.authors | replace: "Nicholas Crispino*", "<span class='author-highlight'>Nicholas Crispino*</span>" }}
+              {% elsif post.authors contains "Nick Crispino" %}
+                {{ post.authors | replace: "Nick Crispino", "<span class='author-highlight'>Nick Crispino</span>" }}
               {% else %}
                 {{ post.authors | replace: "Nicholas Crispino", "<span class='author-highlight'>Nicholas Crispino</span>" }}
               {% endif %}
