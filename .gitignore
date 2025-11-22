@@ -11,3 +11,5 @@ package.json
 vendor/
 # tn/
 # favicon.ico
+run_instructions.md
+.ruby-version
