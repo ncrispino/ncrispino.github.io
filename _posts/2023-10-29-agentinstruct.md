@@ -6,7 +6,7 @@ image: /agentinstruct-fig1.png
 categories: research
 author: "Nicholas Crispino"
 authors: "Nicholas Crispino, Kyle Montgomery, Fankun Zeng, Dawn Song, Chenguang Wang"
-venue: "in Forty-first International Conference on Machine Learning (ICML)"
+venue: "in Forty-first International Conference on Machine Learning (ICML 2024)"
 arxiv: https://arxiv.org/abs/2310.03710
 code: https://github.com/wang-research-lab/agentinstruct
 ---
