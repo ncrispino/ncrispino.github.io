@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "SteeringSafety: A Systematic Safety Evaluation Framework of Representation Steering in LLMs"
-date:   2025-09-13 12:00:00 -0400
+date:   2026-03-31 12:00:00 -0400
 image: /steering-safety.png
 categories: research
 author: "Nicholas Crispino"
